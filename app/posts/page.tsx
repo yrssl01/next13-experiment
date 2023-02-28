@@ -1,23 +1,16 @@
 import Link from 'next/link'
 
 async function getData() {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`, {cache: 'no-store'})
 
     return res.json()
-}
-
-type Post = {
-    userId: number,
-    id: number,
-    title: string,
-    body: string
 }
 
 export default async function Posts() {
     const posts:Post[] = await getData()
   return (
     <>
-    <h1>Posts</h1>
+    <h1 className="text-center">Posts</h1>
     <ul className="mx-8">
         {posts.map((post:Post)=> (
             <li key={post.id} className="mt-4">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import mypic from  '../shared/images/blank.jpg'
 
 export default function About() {
-    // throw new Error('not today')
+
   return (
     <>
     <h1>About</h1>
@@ -12,3 +12,4 @@ export default function About() {
     </>
   )
 }
+
